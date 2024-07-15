@@ -1,0 +1,16 @@
+singleServerConfig:
+    idleConnectionTimeout: 10000 # 空闲连接超时，单位：毫秒
+    connectTimeout: 10000 # 连接超时，单位：毫秒
+    timeout: 3000 # 命令等待超时，单位：毫秒
+    retryAttempts: 3 # 命令失败重试次数
+    retryInterval: 1500 # 命令重试发送间隔，单位：毫秒
+    password: null # Redis 服务器密码
+    subscriptionsPerConnection: 5 # 每个连接的最大订阅数量
+    clientName: null # Redis 客户端名称
+    address: "redis://127.0.0.1:6379" # Redis 服务器地址
+    subscriptionConnectionMinimumIdleSize: 1 # 订阅连接的最小空闲数量
+    subscriptionConnectionPoolSize: 50 # 订阅连接的最大连接数量
+    connectionMinimumIdleSize: 10 # 正常连接的最小空闲数量，至少保持10个空闲连接
+    connectionPoolSize: 50 # 正常连接的最大连接数量，最多可以创建50个连接
+    database: 0 # 连接的数据库编号，默认是0
+    dnsMonitoringInterval: 5000 # DNS监控间隔，单位：毫秒
