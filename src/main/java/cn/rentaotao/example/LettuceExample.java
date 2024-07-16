@@ -1,4 +1,4 @@
-package cn.rentaotao.redis.client;
+package cn.rentaotao.example;
 
 import cn.rentaotao.redis.constant.Host;
 import io.lettuce.core.RedisClient;
