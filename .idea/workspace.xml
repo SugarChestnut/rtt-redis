@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6a44ba4e-af65-4eae-bd04-2e26f52e306c" name="Changes" comment="" />
+    <list default="true" id="6a44ba4e-af65-4eae-bd04-2e26f52e306c" name="Changes" comment="0716" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +18,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -26,54 +29,56 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2jGHXV2OhvJj4U97iznVxAHUMwo" />
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.JedisClient.executor": "Run",
-    "Application.JedisExample.executor": "Run",
-    "Application.JedisTest.executor": "Run",
-    "Application.LettuceClient.executor": "Run",
-    "Application.RedissonExample.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.RedisApplication.executor": "Run",
-    "aspect.path.notification.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/rentaotao/Study/code/rtt-redis/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.JedisClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JedisExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.JedisTest.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LettuceClient.executor&quot;: &quot;Run&quot;,
+    &quot;Application.LettuceExample.executor&quot;: &quot;Run&quot;,
+    &quot;Application.RedissonExample.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.RedisApplication.executor&quot;: &quot;Run&quot;,
+    &quot;aspect.path.notification.shown&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Java/rtt-redis&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.RedissonExample">
+  <component name="RunManager" selected="Application.LettuceExample">
     <configuration name="JedisExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.rentaotao.redis.client.JedisExample" />
+      <option name="MAIN_CLASS_NAME" value="cn.rentaotao.example.JedisExample" />
       <module name="rtt-redis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.rentaotao.redis.client.*" />
+          <option name="PATTERN" value="cn.rentaotao.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -82,11 +87,11 @@
       </method>
     </configuration>
     <configuration name="JedisTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.rentaotao.redis.client.JedisTest" />
+      <option name="MAIN_CLASS_NAME" value="cn.rentaotao.example.JedisTest" />
       <module name="rtt-redis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.rentaotao.redis.client.*" />
+          <option name="PATTERN" value="cn.rentaotao.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -95,11 +100,11 @@
       </method>
     </configuration>
     <configuration name="LettuceExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.rentaotao.redis.client.LettuceExample" />
+      <option name="MAIN_CLASS_NAME" value="cn.rentaotao.example.LettuceExample" />
       <module name="rtt-redis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.rentaotao.redis.client.*" />
+          <option name="PATTERN" value="cn.rentaotao.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,11 +113,11 @@
       </method>
     </configuration>
     <configuration name="RedissonExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cn.rentaotao.redis.client.RedissonExample" />
+      <option name="MAIN_CLASS_NAME" value="cn.rentaotao.example.RedissonExample" />
       <module name="rtt-redis" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cn.rentaotao.redis.client.*" />
+          <option name="PATTERN" value="cn.rentaotao.example.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -135,13 +140,21 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LettuceExample" />
         <item itemvalue="Application.RedissonExample" />
         <item itemvalue="Application.JedisExample" />
-        <item itemvalue="Application.LettuceExample" />
         <item itemvalue="Application.JedisTest" />
         <item itemvalue="Spring Boot.RedisApplication" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
@@ -155,10 +168,34 @@
       <option name="presentableId" value="Default" />
       <updated>1721006536044</updated>
       <workItem from="1721006537238" duration="15731000" />
+      <workItem from="1721046090578" duration="3992000" />
+      <workItem from="1721131812622" duration="8366000" />
+      <workItem from="1721143941374" duration="945000" />
     </task>
+    <task id="LOCAL-00001" summary="0716">
+      <option name="closed" value="true" />
+      <created>1721059277395</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1721059277395</updated>
+    </task>
+    <task id="LOCAL-00002" summary="0716">
+      <option name="closed" value="true" />
+      <created>1721144885512</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1721144885512</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="0716" />
+    <option name="LAST_COMMIT_MESSAGE" value="0716" />
   </component>
 </project>
