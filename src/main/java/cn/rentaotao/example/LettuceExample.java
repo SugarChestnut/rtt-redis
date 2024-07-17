@@ -1,5 +1,6 @@
-package cn.rentaotao.redis.client;
+package cn.rentaotao.example;
 
+import cn.rentaotao.redis.constant.Host;
 import io.lettuce.core.RedisClient;
 import io.lettuce.core.RedisURI;
 import io.lettuce.core.api.StatefulRedisConnection;
@@ -19,7 +20,7 @@ public class LettuceExample {
 
     static {
         RedisURI redisURI = RedisURI.builder()
-                .withHost("127.0.0.1")
+                .withHost(Host.HOST_HOME)
                 .withPort(6379)
                 .withTimeout(Duration.ofMillis(3_000))
                 .build();

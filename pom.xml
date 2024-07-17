@@ -39,11 +39,11 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!-- 是用 jedis 和 lettuce 作为 redis 的客户端       -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
+        <!-- 使用 jedis 和 lettuce 作为 redis 的客户端       -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>redis.clients</groupId>
@@ -59,8 +59,14 @@
 
         <dependency>
             <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
+            <artifactId>redisson-spring-boot-starter</artifactId>
             <version>3.32.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
         </dependency>
 
     </dependencies>
