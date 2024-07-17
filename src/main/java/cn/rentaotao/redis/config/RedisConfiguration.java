@@ -15,7 +15,6 @@ import org.springframework.core.io.ClassPathResource;
 @Configuration
 public class RedisConfiguration {
 
-
     @Bean
     public RedissonClient redissonClient() {
         Config config = new Config();

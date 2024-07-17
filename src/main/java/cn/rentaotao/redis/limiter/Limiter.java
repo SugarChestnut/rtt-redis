@@ -1,4 +1,4 @@
-package cn.rentaotao.redis.limite;
+package cn.rentaotao.redis.limiter;
 
 public interface Limiter {
 

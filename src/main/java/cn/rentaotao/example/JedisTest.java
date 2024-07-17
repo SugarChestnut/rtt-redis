@@ -13,7 +13,7 @@ public class JedisTest {
         try (JedisPool jedisPool = new JedisPool(JedisExample.poolConfig, "127.0.0.1", 6379, 3000)) {
             Jedis jedis = jedisPool.getResource();
             // String-动态字符串
-
+            
             // hash-类似与java中的hashMap实现
 
             // list-双向链表
