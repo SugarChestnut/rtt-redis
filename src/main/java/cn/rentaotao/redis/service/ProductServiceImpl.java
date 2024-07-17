@@ -1,6 +1,9 @@
 package cn.rentaotao.redis.service;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+
+import java.lang.reflect.Type;
 
 /**
  * @author rtt
@@ -8,4 +11,6 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ProductServiceImpl implements ProductService{
+
+    public Type type = getClass();
 }
