@@ -3,13 +3,11 @@ package cn.rentaotao.redis.limiter;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.LockSupport;
 
 /**
- * 漏桶算法
- * 原理：请求先进入到桶中，按固定速率出去，当桶满了之后，拒绝请求。
- * 用于保护系统
- * 如果将 funnel 的数据存储到 redis，无法做到数据更新的原子化
+ * 令牌桶算法
+ * 以固定速率向桶中放入令牌，请求过来的时候，请求一个令牌
  */
 public class NoRedisFunnelRateLimiter {
 
@@ -23,62 +21,67 @@ public class NoRedisFunnelRateLimiter {
                 if (funnel == null) {
                     funnel = new Funnel(capacity, leakingRate);
                     funnels.put(key, funnel);
-
                 }
             }
         }
-        return funnel.watering(1);
+        return funnel.watering();
     }
 
     static class Funnel {
-
-        final ReentrantLock lock = new ReentrantLock(true);
         // 容量
         final int capacity;
         // 泄漏的速率
         final int leakingRate;
-        // 剩余配额
-        volatile AtomicInteger leftQuota;
+        // 水位
+        volatile AtomicInteger water;
         // 上次请求进来的时间戳
         volatile long leakingTs;
 
         public Funnel(int capacity, int leakingRate) {
             this.capacity = capacity;
             this.leakingRate = leakingRate;
-            this.leftQuota = new AtomicInteger(capacity);
-            this.leakingTs = System.currentTimeMillis() / 1000;
+            this.water = new AtomicInteger(0);
+            this.leakingTs = System.currentTimeMillis();
         }
 
-        /**
-         * @param quota 配额
-         * @return 是否获取成功
-         */
-        boolean watering(int quota) {
+        boolean watering() {
+            leaking();
             for (; ; ) {
-                makeSpace();
-                int q = this.leftQuota.get();
-                if (q < quota) {
+                int w = this.water.get();
+                // 超过漏斗容量，拒绝请求
+                if (w >= capacity) {
                     return false;
                 }
-                if (this.leftQuota.compareAndSet(q, q - quota)) {
+                // 水位为空
+                if (w == 0 && this.water.compareAndSet(w, w + 1)) {
+                    // 执行一个请求，水位加1
+                    return true;
+                }
+                // 根据水位和泄漏速率，决定休眠时间
+                int nanos = w * 1000 * 1000 / leakingRate;
+                if (this.water.compareAndSet(w, w + 1)) {
+                    LockSupport.parkNanos(nanos);
                     return true;
                 }
             }
         }
 
         /**
-         * 每
+         *
          */
-        void makeSpace() {
-            int oldQuota = this.leftQuota.get();
+        void leaking() {
+            int w1 = this.water.get();
             long nowTs = System.currentTimeMillis() / 1000;
+            // 间隔时间
             long deltaTs = nowTs - leakingTs;
-            long deltaQuota = deltaTs * leakingRate;
-            if (deltaQuota < 1) {
+            // 漏出的水量
+            long delta = deltaTs / 1000 * leakingRate;
+            if (delta < 1) {
                 return;
             }
-            long nQuota = deltaQuota + oldQuota;
-            if (this.leftQuota.compareAndSet(oldQuota, nQuota > capacity ? capacity : (int) nQuota)) {
+            long w2 = w1 - delta;
+            // 有竞争，说明其他线程已经更新完成水位了
+            if (this.water.compareAndSet(w1, w2 < 0 ? 0 : (int) w2)) {
                 this.leakingTs = nowTs;
             }
         }
