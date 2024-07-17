@@ -2,6 +2,7 @@ package cn.rentaotao.redis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
 import org.springframework.cache.annotation.EnableCaching;
 
 /**
@@ -9,6 +10,7 @@ import org.springframework.cache.annotation.EnableCaching;
  * @date 2024/7/15 09:22
  */
 @SpringBootApplication
+@ConfigurationPropertiesScan
 @EnableCaching
 public class RedisApplication {
 
