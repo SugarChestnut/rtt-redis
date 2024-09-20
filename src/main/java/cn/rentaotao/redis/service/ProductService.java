@@ -5,4 +5,6 @@ package cn.rentaotao.redis.service;
  * @date 2024/7/15 09:48
  */
 public interface ProductService {
+
+    String searchManufacturer(String name);
 }

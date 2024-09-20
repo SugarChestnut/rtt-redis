@@ -1,2 +1,28 @@
 server:
-    port: 80
+    port: 8088
+
+spring:
+    redis:
+#        host: 127.0.0.1
+#        port: 6379
+        timeout: 2000
+        database: 0
+        connect-timeout: 3000
+        client-type: lettuce
+        lettuce:
+            pool:
+                enabled: true
+        jedis:
+            pool:
+                enabled: true
+        # 配置哨兵节点
+        sentinel:
+            master: mymaster
+            nodes:
+                - 127.0.0.1:26379
+                - 127.0.0.1:26380
+                - 127.0.0.1:26381
+#        cluster:
+#            nodes:
+#                - 127.0.0.1:6601
+#            max-redirects: 3
